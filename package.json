@@ -1,0 +1,31 @@
+{
+  "name": "kravchenko-achievments-bot",
+  "version": "1.0.0",
+  "description": "inspired by good old times",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build:live",
+    "build": "tsc -p .",
+    "build:live": "nodemon --watch 'src/**/*.ts' --exec 'ts-node' src/index.ts",
+    "pm2:start": "pm2 start build/index.js --name ka-bot",
+    "pm2:stop": "pm2 stop ka-bot"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.4.5",
+    "telegraf": "4.16.3"
+  },
+  "engines": {
+    "npm": "8.5.5",
+    "node": "16.15.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.7.4",
+    "nodemon": "3.1.7",
+    "pm2": "5.4.2",
+    "prettier": "3.3.3",
+    "ts-node": "10.9.2",
+    "typescript": "5.6.2"
+  }
+}
